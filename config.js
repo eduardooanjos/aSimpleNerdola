@@ -31,36 +31,7 @@ window.CARTA = {
 
   // Tela depois do "Sim"
   finalTitulo: "Eba!!! 🥰",
-  finalTexto: "Você acabou de deixar um nerdola muito feliz. Prometo que vai ser incrível 💕",
-
-  // Convite que aparece depois do "Sim" (cada linha: [rótulo, valor])
-  convite: {
-    titulo: "🎟️ Convite oficial",
-    linhas: [
-      ["Evento", "Nosso segundo encontro 💕"],
-      ["Convidada", "Você ✨"],
-      ["Acompanhante", "Eduardo (um pouquinho nervoso)"],
-      ["Data", "A gente combina 😉"],
-      ["Dress code", "Esse seu sorriso"]
-    ],
-    carimbo: "CONFIRMADO"
-  },
-
-  // Ela escolhe o que quer fazer no encontro
-  escolhaPergunta: "E aí, o que você prefere fazer?",
-  escolhas: [
-    { emoji: "🍦", texto: "Tomar sorvete" },
-    { emoji: "🎬", texto: "Ver um filme" },
-    { emoji: "☕", texto: "Tomar um café" },
-    { emoji: "🌅", texto: "Ver o pôr do sol" }
-  ],
-  escolhaResposta: "Anotado! 📝 Já tô ansioso",
-
-  // Seu WhatsApp com DDI e DDD, só números (ex: "5511999999999").
-  // Se preencher, aparece um botão pra ela te avisar. Deixe "" pra esconder.
-  whatsapp: "",
-  // {escolha} é trocado pelo que ela escolheu
-  whatsappMsg: "Eu disse sim! 💖 Quero {escolha} com você",
+  finalTexto: "", // texto embaixo do título (deixe "" para não mostrar)
 
   // Velocidade da digitação (ms por letra). Menor = mais rápido
   velocidade: 32

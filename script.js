@@ -132,149 +132,20 @@
   no.addEventListener("mouseenter", runAway);
   no.addEventListener("click", (e) => e.preventDefault());
 
-  /* ---------- confete ---------- */
-  function confetti(duration = 3500) {
-    const cv = $("confetti");
-    const ctx = cv.getContext("2d");
-    const dpr = window.devicePixelRatio || 1;
-    cv.width = innerWidth * dpr;
-    cv.height = innerHeight * dpr;
-    ctx.scale(dpr, dpr);
-
-    const COLORS = ["#ff7aa2", "#ffb3c7", "#e2557f", "#ffd166", "#ffffff", "#c77dff"];
-    const parts = [];
-    const end = performance.now() + duration;
-
-    function spawn(fromLeft) {
-      const ang = (fromLeft ? -60 : -120) * Math.PI / 180 + (Math.random() - .5) * .6;
-      const sp = 9 + Math.random() * 8;
-      parts.push({
-        x: fromLeft ? 0 : innerWidth,
-        y: innerHeight * .85,
-        vx: Math.cos(ang) * sp,
-        vy: Math.sin(ang) * sp,
-        r: Math.random() * Math.PI,
-        vr: (Math.random() - .5) * .3,
-        s: 6 + Math.random() * 6,
-        heart: Math.random() < .15,
-        c: COLORS[Math.floor(Math.random() * COLORS.length)]
-      });
-    }
-
-    (function frame(t) {
-      if (t < end) for (let i = 0; i < 4; i++) spawn(i % 2 === 0);
-      ctx.clearRect(0, 0, innerWidth, innerHeight);
-      for (let i = parts.length - 1; i >= 0; i--) {
-        const p = parts[i];
-        p.vy += .25;
-        p.vx *= .99;
-        p.x += p.vx;
-        p.y += p.vy;
-        p.r += p.vr;
-        if (p.y > innerHeight + 30) { parts.splice(i, 1); continue; }
-        ctx.save();
-        ctx.translate(p.x, p.y);
-        ctx.rotate(p.r);
-        if (p.heart) {
-          ctx.font = p.s * 2.4 + "px serif";
-          ctx.fillText("💗", -p.s, p.s);
-        } else {
-          ctx.fillStyle = p.c;
-          ctx.fillRect(-p.s / 2, -p.s / 4, p.s, p.s / 2);
-        }
-        ctx.restore();
-      }
-      if (parts.length || t < end) requestAnimationFrame(frame);
-      else ctx.clearRect(0, 0, innerWidth, innerHeight);
-    })(performance.now());
-  }
-
   /* ---------- "Sim" ---------- */
-  function fillFinal() {
+  $("yes").addEventListener("click", (e) => {
     $("finalTitle").textContent = C.finalTitulo;
     $("finalText").textContent = C.finalTexto;
-
-    const cv = C.convite;
-    $("ticketTitle").textContent = cv.titulo;
-    for (const [k, v] of cv.linhas) {
-      const dt = document.createElement("dt");
-      const dd = document.createElement("dd");
-      dt.textContent = k;
-      dd.textContent = v;
-      $("ticketRows").append(dt, dd);
-    }
-    $("stamp").textContent = cv.carimbo;
-
-    $("choicesQ").textContent = C.escolhaPergunta;
-    const grid = $("choiceGrid");
-    for (const op of C.escolhas) {
-      const b = document.createElement("button");
-      b.className = "choice";
-      const em = document.createElement("span");
-      em.textContent = op.emoji;
-      b.append(em, op.texto);
-      b.addEventListener("click", () => pick(b, op));
-      grid.appendChild(b);
-    }
-  }
-
-  function pick(btn, op) {
-    document.querySelectorAll(".choice").forEach((c) => c.classList.remove("picked"));
-    btn.classList.add("picked");
-    $("choiceGrid").classList.add("done");
-    $("choiceReply").textContent = `${op.emoji} ${C.escolhaResposta}`;
-    $("choiceReply").classList.add("show");
-
-    const r = btn.getBoundingClientRect();
-    burst(r.left + r.width / 2, r.top + r.height / 2, 14);
-
-    if (C.whatsapp) {
-      const msg = C.whatsappMsg.replace("{escolha}", op.texto.toLowerCase());
-      $("wa").href = `https://wa.me/${C.whatsapp}?text=${encodeURIComponent(msg)}`;
-      $("wa").classList.add("show");
-    }
-  }
-
-  let said = false;
-  $("yes").addEventListener("click", async () => {
-    if (said) return;
-    said = true;
+    $("finalText").hidden = !C.finalTexto;
     no.style.display = "none";
-    if (navigator.vibrate) navigator.vibrate([80, 60, 120]);
-
-    // 1. um coração gigante cobre a tela
-    const wipe = $("heartWipe");
-    const r = $("yes").getBoundingClientRect();
-    wipe.style.left = r.left + r.width / 2 + "px";
-    wipe.style.top = r.top + r.height / 2 + "px";
-    wipe.classList.add("go");
-    fillFinal();
-
-    await sleep(reduceMotion ? 0 : 650);
     $("final").classList.add("show");
-    $("letter").classList.remove("show");
 
-    // 2. confete saindo dos cantos
-    await sleep(reduceMotion ? 0 : 400);
-    if (!reduceMotion) confetti();
-
-    // 3. os blocos aparecem um por um
-    const items = [...document.querySelectorAll(".final-card > *")];
-    const step = reduceMotion ? 0 : 450;
-    for (const el of items.slice(0, 3)) { el.classList.add("in"); await sleep(step); }
-
-    // 4. o convite chega e leva o carimbo
-    $("ticket").classList.add("in");
-    await sleep(reduceMotion ? 0 : 1100);
-    $("stamp").classList.add("hit");
-    await sleep(reduceMotion ? 0 : 330);
-    $("ticket").classList.add("shake");
-    if (navigator.vibrate) navigator.vibrate(40);
-    const t = $("stamp").getBoundingClientRect();
-    burst(t.left + t.width / 2, t.top + t.height / 2, 18);
-
-    // 5. ela escolhe o programa
-    await sleep(reduceMotion ? 0 : 1000);
-    $("choices").classList.add("in");
+    const shower = (k) => burst(
+      window.innerWidth * (0.2 + Math.random() * 0.6),
+      window.innerHeight * (0.3 + Math.random() * 0.4),
+      28
+    );
+    shower();
+    if (!reduceMotion) for (let k = 1; k < 6; k++) setTimeout(shower, k * 350);
   });
 })();

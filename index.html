@@ -52,11 +52,27 @@
   </section>
 
   <!-- TELA 3: resposta "sim" -->
+  <div class="heart-wipe" id="heartWipe" aria-hidden="true">💖</div>
+  <canvas class="confetti" id="confetti" aria-hidden="true"></canvas>
+
   <section class="final" id="final">
     <div class="final-card">
       <div class="big-heart">💖</div>
       <h2 id="finalTitle"></h2>
-      <p id="finalText"></p>
+      <p class="final-text" id="finalText"></p>
+
+      <div class="ticket" id="ticket">
+        <p class="ticket-title" id="ticketTitle"></p>
+        <dl class="ticket-rows" id="ticketRows"></dl>
+        <span class="stamp" id="stamp"></span>
+      </div>
+
+      <div class="choices" id="choices">
+        <p class="choices-q" id="choicesQ"></p>
+        <div class="choice-grid" id="choiceGrid"></div>
+        <p class="choice-reply" id="choiceReply"></p>
+        <a class="btn wa" id="wa" target="_blank" rel="noopener">Me conta no WhatsApp 💬</a>
+      </div>
     </div>
   </section>
 

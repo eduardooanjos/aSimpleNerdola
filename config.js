@@ -5,7 +5,7 @@ window.CARTA = {
 
   // Parágrafos da carta (cada item vira um parágrafo, digitado com animação)
   paragrafos: [
-    "Faz só 5 dias que a gente se conhece, eu sei. Mas eu fiquei tão animado que acabei fazendo um site inteiro só pra você (sim, sou nerdola assim mesmo 🤓).",
+    "Faz só alguns dias que a gente se conhece, eu sei. Mas eu fiquei tão animado que acabei fazendo um site inteiro só pra você (sim, sou nerdola assim mesmo 🤓).",
     "A gente começou conversando online, e eu já tava gostando. Aí te vi pessoalmente e pronto: não consegui mais parar de pensar no seu sorriso.",
     "E o seu cheiro... sério, ficou na minha cabeça até agora. Fiquei feliz demais só de estar pertinho de você 😳",
     "Uma vez só já foi pouco demais. Então, mocinha, eu queria te perguntar uma coisa..."

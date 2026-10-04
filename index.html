@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#ffd6e0">
+  <title>Uma cartinha pra você 💌</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💌</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- corações flutuando no fundo -->
+  <div class="hearts-bg" aria-hidden="true"></div>
+
+  <!-- TELA 1: envelope -->
+  <main class="stage" id="stage">
+    <p class="hint" id="hint">tem uma cartinha pra você...</p>
+
+    <button class="envelope" id="envelope" aria-label="Abrir a cartinha">
+      <span class="env-back"></span>
+      <span class="letter-peek">
+        <span class="peek-line"></span>
+        <span class="peek-line short"></span>
+        <span class="peek-line"></span>
+      </span>
+      <span class="env-front"></span>
+      <span class="env-flap"></span>
+      <span class="seal">❤</span>
+    </button>
+
+    <p class="tap" id="tap">toque no envelope 💕</p>
+  </main>
+
+  <!-- TELA 2: a carta -->
+  <section class="letter" id="letter" aria-live="polite">
+    <div class="paper">
+      <h1 class="to" id="to"></h1>
+      <div class="body" id="body"></div>
+      <p class="sign" id="sign"></p>
+
+      <div class="question" id="question">
+        <p class="q-text" id="qText"></p>
+        <div class="q-buttons">
+          <button class="btn yes" id="yes"></button>
+          <button class="btn no" id="no"></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TELA 3: resposta "sim" -->
+  <section class="final" id="final">
+    <div class="final-card">
+      <div class="big-heart">💖</div>
+      <h2 id="finalTitle"></h2>
+      <p id="finalText"></p>
+    </div>
+  </section>
+
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

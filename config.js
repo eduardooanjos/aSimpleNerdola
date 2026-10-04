@@ -1,21 +1,21 @@
 // ✏️ EDITE AQUI! Tudo o que aparece na cartinha vem deste arquivo.
 window.CARTA = {
   // Pra quem é a carta
-  para: "Para você, minha crush 🌷",
+  para: "Para você 🌷",
 
   // Parágrafos da carta (cada item vira um parágrafo, digitado com animação)
   paragrafos: [
-    "Eu fiquei um tempão pensando em como te dizer isso, e acabei fazendo um site inteiro só pra você (sim, sou nerdola assim mesmo 🤓).",
-    "Desde que eu te conheci, meus dias ficaram mais leves. Seu sorriso tem esse poder estranho de fazer qualquer coisa ruim parecer pequenininha.",
-    "Eu gosto do jeito que você ri, do jeito que você fala das coisas que ama, e de como o tempo passa rápido demais quando eu tô com você.",
-    "Então resolvi ser corajoso e te perguntar uma coisa..."
+    "Faz só 5 dias que a gente se conhece, eu sei. Mas eu fiquei tão animado que acabei fazendo um site inteiro só pra você (sim, sou nerdola assim mesmo 🤓).",
+    "A gente começou conversando online, e eu já tava gostando. Aí te vi pessoalmente e pronto: não consegui mais parar de pensar no seu sorriso.",
+    "E o seu cheiro... sério, ficou na minha cabeça até agora. Fiquei feliz demais só de estar pertinho de você 🙈",
+    "Uma vez só já foi pouco demais. Então, mocinha, eu queria te perguntar uma coisa..."
   ],
 
   // Assinatura
   assinatura: "Com carinho, Eduardo 💌",
 
   // Pergunta final (deixe "" para não mostrar a pergunta)
-  pergunta: "Quer sair comigo? 🥺👉👈",
+  pergunta: "Quer sair comigo de novo? 🥺👉👈",
   botaoSim: "Sim! 💖",
   botaoNao: "Não 😢",
 

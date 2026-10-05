@@ -5,11 +5,9 @@ window.CARTA = {
 
   // Parágrafos da carta (cada item vira um parágrafo, digitado com animação)
   paragrafos: [
-    "Faz só alguns dias que a gente se conhece, eu sei. Mas eu fiquei tão animado que acabei fazendo um site inteiro só pra você (sim, sou nerdola assim mesmo 🤓).",
-    "A gente começou conversando online, e eu já tava gostando. Aí te vi pessoalmente e pronto: não consegui mais parar de pensar no seu sorriso. E o seu cheiro... sério, ficou na minha cabeça até agora 😳",
-    "Falando em prova: histologia é a matéria dos tecidos, né? Pois quando eu te vi, minhas pernas viraram tecido conjuntivo frouxo na hora 😅 Essa parte você nem precisa estudar, já domina na prática.",
-    "Agora falando sério: você é inteligente, dedicada e muito mais preparada do que imagina. Todo esse tempo de estudo vai aparecer na hora da prova. Confia em você, porque eu confio.",
-    "Respira fundo, lê com calma e vai com tudo. Boa prova, mocinha! ✨"
+    "Foi uma ideia espontânea e acabei fazendo um site inteiro só pra você (sim, sou nerdola assim mesmo 🤓).",
+    "Sei que sua prova é hoje à tarde, e sei ainda mais que você é imensamente capaz. Por isso, não vou te desejar toda a sorte do mundo, porque isso não é sobre sorte: é sobre você e o quanto você é inteligente. Então eu te desejo uma excelente prova! Você é a melhor em histologia… epito…?? Eu já esqueci kkkkkk",
+    "Respira fundo, analise bem as lâminas e aproveite as pistas. Boa prova, mocinha! 🫢"
   ],
 
   // Assinatura

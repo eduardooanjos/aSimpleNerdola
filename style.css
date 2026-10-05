@@ -166,9 +166,10 @@ button { font: inherit; border: 0; background: none; cursor: pointer; color: inh
   width: 100%;
   max-width: 520px;
   margin: auto 0;
-  padding: 36px 26px 32px;
+  /* tudo na carta anda em múltiplos de 32px pra escrita cair em cima das linhas */
+  padding: 32px 26px;
   background:
-    repeating-linear-gradient(to bottom, transparent 0 31px, #f6dfe4 31px 32px),
+    repeating-linear-gradient(to bottom, transparent 0 31px, #f6dfe4 31px 32px) 0 -5px,
     var(--paper);
   border-radius: 14px;
   box-shadow: 0 20px 50px rgba(226, 85, 127, .25);
@@ -187,16 +188,17 @@ button { font: inherit; border: 0; background: none; cursor: pointer; color: inh
 
 .to {
   font-family: "Dancing Script", cursive;
-  font-size: clamp(1.8rem, 7vw, 2.4rem);
+  font-size: 2rem;
+  line-height: 32px;
   color: var(--pink-dark);
-  margin-bottom: 18px;
-  min-height: 1.2em;
+  margin-bottom: 32px;
+  min-height: 32px;
 }
 
 .body p {
   font-size: 1.05rem;
   line-height: 32px;
-  margin-bottom: 16px;
+  margin-bottom: 32px;
 }
 
 .caret::after {
@@ -210,8 +212,8 @@ button { font: inherit; border: 0; background: none; cursor: pointer; color: inh
   font-family: "Dancing Script", cursive;
   font-size: 1.6rem;
   text-align: right;
+  line-height: 32px;
   color: var(--pink-dark);
-  margin-top: 10px;
   opacity: 0;
   transform: translateY(8px);
   transition: opacity .8s ease, transform .8s ease;

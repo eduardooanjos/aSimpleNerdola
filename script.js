@@ -4,6 +4,8 @@
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
+  if (!C.pergunta) $("question").hidden = true;
+
   /* ---------- corações flutuando no fundo ---------- */
   const bg = document.querySelector(".hearts-bg");
   const HEARTS = ["💗", "💕", "💖", "🩷", "💞", "🌸", "✨"];
